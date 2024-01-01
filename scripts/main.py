@@ -29,7 +29,7 @@ parser = configparser.ConfigParser()
 # Get the path to the current file
 current_file_path = os.path.abspath(__file__)
 # Get the path to the configuration file
-config_file_path = os.path.join(os.path.dirname(current_file_path), '../config_file.ini')
+config_file_path = os.path.join(os.path.dirname(current_file_path), '../config_file')
 
 
 parser.read(config_file_path)
