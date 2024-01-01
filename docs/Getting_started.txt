@@ -1,0 +1,56 @@
+1) How to run?
+-> Open terminal within the Email_Scraper folder
+-> type in "./RUN.sh" and press ENTER
+-> This will start the run process
+
+2) Removing logs
+-> Every run will generate a logfile. 
+-> It's size would probably be less than 1 MB.
+-> But if you keep running this bot a lot, the logs might stack up.
+-> Please don't remove the logs from the file manager. Use the "RemoveLogs.sh" file.
+-> type in "./RemoveLogs.sh" and press ENTER. This should cleanup the logs
+
+3) config_file.ini
+There are 2 sections to the config_file- website_scraper and fb_community_scraper.
+
+# website_scraper
+- "websites_list" stores the filename which has the List of websites to scrape
+
+- "scroll_depth" mentions the number of scrolls to do per website
+Do note that the websites don't load fully when we visit them.
+The components at the bottom load after we scroll down.
+The logic here is we scroll once and wait for a sec, then scroll again.
+So, you can see how more scrolls would result in a longer runtime.
+
+- "master_email_file" is the file which houses all the emails scraped until now.
+Any new scraped is added to this file.
+We also maintain a separate output folder which has only the new emails generated.
+
+
+# fb_community_scraper
+- "user" and "password" are the login credentials to Facebook
+
+- "communities_list" has a list of communities to scrape
+
+- "scroll_depth" mentions the number of scrolls to do per community
+Do note that the community don't load fully when we visit them.
+The components at the bottom load after we scroll down.
+The logic here is we scroll once and wait for a sec, then scroll again.
+So, you can see how more scrolls would result in a longer runtime.
+Facebook communities would probably scroll inifinitely
+
+- "master_email_file" is the file which houses all the emails scraped until now.
+Any new scraped is added to this file.
+We also maintain a separate output folder which has only the new emails generated.
+we can have same or different master_email_files to store emails.
+if you have the same name for the file, it would store website scraped emails and fb scraped emails together
+
+4) NOTE:
+The whole Email_Scraper is the bot's functioning space.
+Deleting any file should be done on your own risk as it might break the bot's functionality.
+My rule of thumb:
+-> only use the RUN.sh and RemoveLogs.sh scripts
+-> only edit the config_file.ini
+-> The OUTPUT folder is yours. You can delete it, move elements within it. It's upto you.
+-> Other than that, you shouldn't touch any file.
+

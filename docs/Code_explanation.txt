@@ -1,0 +1,13 @@
+The RUN.sh script calls the main python file within the scripts folder which starts the bot.
+
+The main pythonfile reads the configfile first.
+
+It then calls the website scraper.
+The website scraper goes over the list of websites to scrape and then finds emails within the websites.
+It then stores the emails within the master_email_file and also the new output file within a newly generated output_folder.
+
+After the website scraper has run, it calls the facebook community scraper.
+It first logs into facebook using the credentials provided.
+Then, It does a similar thing as above.
+It visits the list of communities provided, scrolls and finds the emails within them.
+It then stores the emails within the master_email_file and also the new output file within a newly generated output_folder.
